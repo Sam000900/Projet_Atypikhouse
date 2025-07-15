@@ -9,7 +9,7 @@
 <template>
   <div class="dashboardreservationcard">
     <div class="dashboardreservationcard-left">
-      <img :src="'/storage/' + props.reservationInfo.accommodation.main_image" alt="Image du logement" class="dashboardreservationcard-image"/>
+      <img :src="'/' + props.reservationInfo.accommodation.main_image" alt="Image du logement" class="dashboardreservationcard-image"/>
     </div>
     <div class="dashboardreservationcard-right">
       <div class="dashboardreservationcard-content-box">

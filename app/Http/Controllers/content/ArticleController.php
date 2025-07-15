@@ -62,7 +62,7 @@ class ArticleController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            if ($article->image_path && !str_starts_with($article->image_path, 'seeder-images')) {
+            if ($article->image_path && !str_starts_with($article->image_path, 'images/seeder-images')) {
                 if (Storage::disk('public')->exists($article->image_path)) {
                     Storage::disk('public')->delete($article->image_path);
                 }
@@ -82,7 +82,7 @@ class ArticleController extends Controller
     {
         $imagePath = $article->image_path;
 
-        if ($imagePath && !str_starts_with($imagePath, 'seeder-images')) {
+        if ($imagePath && !str_starts_with($imagePath, 'images/seeder-images')) {
             if (Storage::disk('public')->exists($imagePath)) {
                 Storage::disk('public')->delete($imagePath);
             }

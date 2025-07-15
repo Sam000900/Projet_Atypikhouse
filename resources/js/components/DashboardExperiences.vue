@@ -79,7 +79,7 @@
         <div v-if="props.experienceData?.image_path">
           <p class="dashboardexperiences-label">Image actuelle de l'expérience :</p>
           <div class="dashboardexperiences-image-box">
-            <img class="dashboardexperiences-image" :src="'/storage/' + props.experienceData?.image_path" alt="Image de l'expérience" />
+            <img class="dashboardexperiences-image" :src="'/' + props.experienceData?.image_path" alt="Image de l'expérience" />
           </div>
         </div>
 

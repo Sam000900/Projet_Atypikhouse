@@ -61,7 +61,7 @@
         <div v-if="props.articleData?.image_path">
           <p class="dashboardarticles-label">Image actuelle de l'article :</p>
           <div class="dashboardarticles-image-box">
-            <img class="dashboardarticles-image" :src="'/storage/' + props.articleData?.image_path" alt="Image de l'article" />
+            <img class="dashboardarticles-image" :src="'/' + props.articleData?.image_path" alt="Image de l'article" />
           </div>
         </div>
 

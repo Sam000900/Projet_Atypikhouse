@@ -7,7 +7,7 @@
   <div class="dashboardhousingcard">
     <div class="dashboardhousingcard-left">
       <img
-        :src="'/storage/' + props.accommodationInfo.main_image"
+        :src="'/' + props.accommodationInfo.main_image"
         :alt="props.accommodationInfo.imageAlt"
         class="dashboardhousingcard-image"
       />
@@ -44,7 +44,7 @@
         </div>
         <div class="dashboardhousingcard-secondary-info">
           <VsxIcon iconName="Moon" color="#5D6679" size="25" type="linear" />
-          <p class="dashboardhousingcard-text">- chambres</p>
+          <p class="dashboardhousingcard-text">{{ props.accommodationInfo.bedrooms }} chambres</p>
         </div>
       </div>
 

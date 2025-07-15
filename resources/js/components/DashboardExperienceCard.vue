@@ -6,7 +6,7 @@
 <template>
   <div class="dashboardexperiencecard">
     <div class="dashboardexperiencecard-left">
-      <img :src="'/storage/' + props.experienceInfo.image_path" alt="Image de l'expérience" class="dashboardexperiencecard-image"/>
+      <img :src="'/' + props.experienceInfo.image_path" alt="Image de l'expérience" class="dashboardexperiencecard-image"/>
     </div>
 
     <div class="dashboardexperiencecard-right">

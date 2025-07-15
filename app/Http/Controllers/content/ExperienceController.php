@@ -108,7 +108,7 @@ class ExperienceController extends Controller
         $imagePath = $experience->image_path;
 
         if ($request->hasFile('image')) {
-            if ($imagePath && !str_starts_with($imagePath, 'seeder-images')) {
+            if ($imagePath && !str_starts_with($imagePath, 'images/seeder-images')) {
                 if (Storage::disk('public')->exists($imagePath)) {
                     Storage::disk('public')->delete($imagePath);
                 }
@@ -129,7 +129,7 @@ class ExperienceController extends Controller
     {
         $imagePath = $experience->image_path;
 
-        if ($imagePath && !str_starts_with($imagePath, 'seeder-images')) {
+        if ($imagePath && !str_starts_with($imagePath, 'images/seeder-images')) {
             if (Storage::disk('public')->exists($imagePath)) {
                 Storage::disk('public')->delete($imagePath);
             }

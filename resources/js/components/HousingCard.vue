@@ -12,7 +12,7 @@
   <div class="housingcard-card" v-if="accommodationInfo">
     <div class="housingcard-card-image-box">
       <img
-        :src="'/storage/' + props.accommodationInfo.main_image"
+        :src="props.accommodationInfo.main_image"
         :alt="props.accommodationInfo.imageAlt"
         class="housingcard-card-image"
       />

@@ -14,7 +14,7 @@
   <div class="housingcard-card">
     <div class="housingcard-card-image-box">
       <img
-        :src="'/storage/' + props.experiencesData.image_path"
+        :src="props.experiencesData.image_path"
         class="housingcard-card-image"
       />
     </div>

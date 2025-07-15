@@ -6,7 +6,7 @@
 <template>
   <div class="dashboardarticlecard">
     <div class="dashboardarticlecard-left">
-      <img :src="'/storage/' + props.articleInfo.image_path" alt="Image de l'article" class="dashboardarticlecard-image"/>
+      <img :src="'/' + props.articleInfo.image_path" alt="Image de l'article" class="dashboardarticlecard-image"/>
     </div>
 
     <div class="dashboardarticlecard-right">

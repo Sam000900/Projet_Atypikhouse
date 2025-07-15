@@ -97,7 +97,7 @@
         <p class="housingmedia-upload-text" v-if="props.storedImagesData.length === 0">Il n'y a aucune image dans la galerie pour ce logement</p>
         
         <div class="housingmedia-image-container" v-for="(image, index) in props.storedImagesData" :key="index">
-          <img class="housingmedia-image" :src="'../storage/' + image.image_path" alt="Image utilisateur"/>
+          <img class="housingmedia-image" :src="'/' + image.image_path" alt="Image utilisateur"/>
         </div>
       </div>
     </div>

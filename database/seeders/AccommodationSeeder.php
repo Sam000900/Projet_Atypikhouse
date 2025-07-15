@@ -57,7 +57,7 @@ class AccommodationSeeder extends Seeder
             'description' => "...",
             'latitude' => 48.85904100017451,
             'longitude' => 2.337252575180253,
-            'main_image' => "seeder-images/accommodation-" . ($i + 1) . "-image-1.jpg",
+            'main_image' => "images/seeder-images/accommodation-" . ($i + 1) . "-image-1.jpg",
             'wifi' => (bool)random_int(0, 1),
             'air_conditioning' =>  (bool)random_int(0, 1),
             'parking' =>  (bool)random_int(0, 1),
@@ -81,7 +81,7 @@ class AccommodationSeeder extends Seeder
 
           AccommodationImage::factory()->create([
             'accommodation_id' => $new_accommodation->id,
-            'image_path' => "seeder-images/accommodation-" . ($i + 1) . "-image-1.jpg",
+            'image_path' => "images/seeder-images/accommodation-" . ($i + 1) . "-image-1.jpg",
             'is_main' => true,
           ]);
         }
@@ -100,7 +100,7 @@ class AccommodationSeeder extends Seeder
             'description' => "Évadez-vous dans ce havre de paix en bord de mer, où le son des vagues et la brise marine vous invitent à la détente. Profitez d'une terrasse privée avec vue panoramique, d'un intérieur cosy baigné de lumière et d'un cadre idyllique pour un séjour inoubliable. Réservez votre escapade dès maintenant !",
             'latitude' => 44.2251353906258,
             'longitude' => -1.194156327381768,
-            'main_image' => "seeder-images/accommodation-20-image-1.jpg",
+            'main_image' => "images/seeder-images/accommodation-20-image-1.jpg",
             'wifi' => true,
             'air_conditioning' => true,
             'parking' => true,
@@ -124,37 +124,37 @@ class AccommodationSeeder extends Seeder
 
         AccommodationImage::factory()->create([
           'accommodation_id' => $accommodation_20->id,
-          'image_path' => "seeder-images/accommodation-20-image-1.jpg",
+          'image_path' => "images/seeder-images/accommodation-20-image-1.jpg",
           'is_main' => true,
         ]);
 
         AccommodationImage::factory()->create([
           'accommodation_id' => $accommodation_20->id,
-          'image_path' => "seeder-images/accommodation-20-image-2.jpg",
+          'image_path' => "images/seeder-images/accommodation-20-image-2.jpg",
           'is_main' => false,
         ]);
 
         AccommodationImage::factory()->create([
           'accommodation_id' => $accommodation_20->id,
-          'image_path' => "seeder-images/accommodation-20-image-3.jpg",
+          'image_path' => "images/seeder-images/accommodation-20-image-3.jpg",
           'is_main' => false,
         ]);
 
         AccommodationImage::factory()->create([
           'accommodation_id' => $accommodation_20->id,
-          'image_path' => "seeder-images/accommodation-20-image-4.jpg",
+          'image_path' => "images/seeder-images/accommodation-20-image-4.jpg",
           'is_main' => false,
         ]);
 
         AccommodationImage::factory()->create([
           'accommodation_id' => $accommodation_20->id,
-          'image_path' => "seeder-images/accommodation-20-image-5.jpg",
+          'image_path' => "images/seeder-images/accommodation-20-image-5.jpg",
           'is_main' => false,
         ]);
 
         AccommodationImage::factory()->create([
           'accommodation_id' => $accommodation_20->id,
-          'image_path' => "seeder-images/accommodation-20-image-6.jpg",
+          'image_path' => "images/seeder-images/accommodation-20-image-6.jpg",
           'is_main' => false,
         ]);
 
@@ -172,7 +172,7 @@ class AccommodationSeeder extends Seeder
             'description' => "...",
             'latitude' => 44.350982469027194,
             'longitude' => -1.668562943268097,
-            'main_image' => "seeder-images/accommodation-21-image-1.jpg",
+            'main_image' => "images/seeder-images/accommodation-21-image-1.jpg",
             'wifi' => false,
             'air_conditioning' => false,
             'parking' => false,
@@ -196,7 +196,7 @@ class AccommodationSeeder extends Seeder
 
         AccommodationImage::factory()->create([
           'accommodation_id' => $accommodation_21->id,
-          'image_path' => "seeder-images/accommodation-21-image-1.jpg",
+          'image_path' => "images/seeder-images/accommodation-21-image-1.jpg",
           'is_main' => true,
         ]);
 
@@ -214,7 +214,7 @@ class AccommodationSeeder extends Seeder
             'description' => "...",
             'latitude' => 48.85904100017451,
             'longitude' => 2.337252575180253,
-            'main_image' => "seeder-images/accommodation-22-image-1.jpg",
+            'main_image' => "images/seeder-images/accommodation-22-image-1.jpg",
             'wifi' => true,
             'air_conditioning' => false,
             'parking' => false,
@@ -238,7 +238,7 @@ class AccommodationSeeder extends Seeder
 
         AccommodationImage::factory()->create([
           'accommodation_id' => $accommodation_22->id,
-          'image_path' => "seeder-images/accommodation-22-image-1.jpg",
+          'image_path' => "images/seeder-images/accommodation-22-image-1.jpg",
           'is_main' => true,
         ]);
     }

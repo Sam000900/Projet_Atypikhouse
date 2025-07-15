@@ -41,7 +41,7 @@ class ExperienceSeeder extends Seeder
                 'longitude' => 2.337252575180253,
                 'price' => random_int(30, 150),
                 'additional_information' => "Règles supplémentaires de l'expérience",
-                'image_path' => "seeder-images/experience-image-" . ($i + 1) . ".jpg",
+                'image_path' => "images/seeder-images/experience-image-" . ($i + 1) . ".jpg",
                 'user_id' => $user->id,
             ]);
         }

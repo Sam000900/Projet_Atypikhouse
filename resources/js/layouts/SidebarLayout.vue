@@ -13,7 +13,7 @@
       { text: 'Réservations', href: 'dashboard/reservations', icon: 'Calendar', forRole: ['tenant'] },
       { text: 'Articles', href: 'dashboard/articles', icon: 'NoteText', forRole: ['admin'] },
       { text: 'Experiences', href: 'dashboard/experiences', icon: 'SunFog', forRole: ['admin'] },
-      { text: 'Logements', href: 'dashboard/logements', icon: 'House', forRole: ['tenant', 'admin'] },
+      { text: 'Logements', href: 'dashboard/logements', icon: 'House', forRole: ['owner', 'admin'] },
       // { text: 'Messages', href: 'accueil', icon: 'Messages2', forRole: [] },
       // { text: 'Finances', href: 'accueil', icon: 'DollarCircle', forRole: [] },
       // { text: 'Statistiques', href: 'accueil', icon: 'StatusUp', forRole: [] },

@@ -202,7 +202,7 @@ class AccommodationController extends Controller
     public function destroy(Accommodation $accommodation)
     {
         foreach ($accommodation->images as $image) {
-            if (!str_starts_with($image->image_path, 'seeder-images')) {
+            if (!str_starts_with($image->image_path, 'images/seeder-images')) {
                 if (Storage::disk('public')->exists($image->image_path)) {
                     Storage::disk('public')->delete($image->image_path);
                     $image->delete();
