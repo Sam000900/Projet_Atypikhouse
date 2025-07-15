@@ -1,0 +1,36 @@
+{
+  "title": "Mentions Légales",
+  "paragraphs": [
+    {
+      "title": "1. Editeur du site",
+      "texts": [
+        "[Nom de la société]",
+        "Société [forme juridique] au capital de [montant] euros",
+        "RCS [ville et numéro]",
+        "Siège social : [adresse]",
+        "Téléphone : [numéro]",
+        "Email : [email]"
+      ]
+    },
+    {
+      "title": "2. Hébergeur",
+      "texts": [
+        "[Nom de l'hébergeur]",
+        "[Adresse]",
+        "[Téléphone]"
+      ]
+    },
+    {
+      "title": "3. Propriété intellectuelle",
+      "texts": [
+        "L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques"
+      ]
+    },
+    {
+      "title": "4. Protection des données personnelle",
+      "texts": [
+        "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Pour exercer ce droit, veuillez nous contacter par email."
+      ]
+    }
+  ]
+}

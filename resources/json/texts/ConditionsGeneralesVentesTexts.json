@@ -1,0 +1,35 @@
+{
+  "title": "Conditions Générales de Ventes",
+  "paragraphs": [
+    {
+      "title": "1. Application des conditions",
+      "texts": [
+        "Les présentes Conditions Générales de Vente (CGV) régissent les ventes de produits et services effectuées sur le site [nom du site]. Toute commande implique l'acceptation des présentes conditions."
+      ]
+    },
+    {
+      "title": "2. Prix",
+      "texts": [
+        "Les prix sont indiqués en euros toutes taxes comprises. Ils tiennent compte de la TVA applicable au jour de la commande. Tout changement du taux de TVA sera répercuté sur le prix des produits."
+      ]
+    },
+    {
+      "title": "3. Paiement",
+      "texts": [
+        "Le paiement est exigible immédiatement à la commande. Le client peut effectuer le règlement par carte bancaire ou tout autre moyen proposé au moment de la commande."
+      ]
+    },
+    {
+      "title": "4. Livraison",
+      "texts": [
+        "Les délais de livraison sont donnés à titre indicatif. Tout retard raisonnable dans la livraison des produits ne pourra pas donner lieu à l'allocation de dommages et intérêts au profit de l'acheteur."
+      ]
+    },
+    {
+      "title": "5. Droit de rétractation",
+      "texts": [
+        "Conformément aux dispositions légales en vigueur, vous disposez d'un délai de 14 jours à compter de la réception de vos produits pour exercer votre droit de rétractation sans avoir à justifier de motifs ni à payer de pénalité."
+      ]
+    }
+  ]
+}
