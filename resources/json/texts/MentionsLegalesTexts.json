@@ -2,31 +2,92 @@
   "title": "Mentions Légales",
   "paragraphs": [
     {
-      "title": "1. Editeur du site",
+      "title": "Introduction",
       "texts": [
-        "[Nom de la société]",
-        "Société [forme juridique] au capital de [montant] euros",
-        "RCS [ville et numéro]",
-        "Siège social : [adresse]",
-        "Téléphone : [numéro]",
-        "Email : [email]"
+        "AtypikHouse, une nouvelle SARL fondée par trois associés passionnés par les voyages, l'habitat alternatif et la vie en harmonie avec la nature, s'engage résolument en faveur de l'égalité sous toutes ses formes.",
+        "Bien que la taille actuelle de notre entreprise ne nous soumette pas à toutes les obligations légales des grandes structures en matière d'égalité professionnelle, nous considérons que l'égalité est un pilier fondamental de notre politique de Responsabilité Sociale des Entreprises (RSE).",
+        "Notre engagement va au-delà de la simple conformité réglementaire ; il est ancré dans nos valeurs profondes et notre désir de créer un environnement de travail juste, équitable et inclusif pour tous nos collaborateurs et partenaires.",
+        "Ce cahier de l'égalité formalise notre démarche proactive et nos engagements concrets pour promouvoir l'égalité professionnelle entre les femmes et les hommes, lutter contre toutes les formes de discrimination et favoriser un environnement respectueux et bienveillant.",
+        "Nous sommes convaincus qu'une politique d'égalité forte contribue non seulement au bien-être de nos équipes, mais aussi à la performance globale et à l'innovation au sein d'AtypikHouse."
       ]
     },
     {
-      "title": "2. Hébergeur",
+      "title": "Cadre légal et engagements d'AtypikHouse",
       "texts": [
-        "[Nom de l'hébergeur]",
-        "[Adresse]",
-        "[Téléphone]"
+        "En France, l'égalité professionnelle entre les femmes et les hommes est une obligation légale inscrite dans le code du travail.",
+        "Bien que l'Index de l'égalité professionnelle soit obligatoire pour les entreprises de 50 salariés et plus, AtypikHouse, en tant que SARL nouvellement créée, s'engage volontairement à respecter les principes fondamentaux de l'égalité de traitement et à prévenir toute forme de discrimination.",
+        "Notre démarche RSE nous pousse à aller au-delà des obligations minimales pour bâtir une culture d'entreprise où chacun se sent valorisé et respecté.",
+        "Nos engagements s'articulent autour des axes suivants : égalité de rémunération, accès à l'emploi et à la formation, conditions de travail et qualité de vie, équilibre des temps de vie, prévention des discriminations et du harcèlement, communication et sensibilisation, mise en œuvre et suivi de la politique."
       ]
     },
     {
-      "title": "3. Propriété intellectuelle",
+      "title": "1. Égalité de rémunération",
       "texts": [
-        "L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques"
+        "Garantir une égalité de rémunération entre les femmes et les hommes pour un travail de valeur égale.",
+        "Transparence dans les grilles salariales et évaluation objective des postes, indépendamment du genre.",
+        "Recrutement et promotion exempts de biais et basés uniquement sur les compétences et l'expérience."
       ]
     },
     {
+      "title": "2. Accès à l'emploi et à la formation",
+      "texts": [
+        "Promouvoir la diversité et l'égalité des chances dans les recrutements.",
+        "Rédaction d'offres d'emploi non-discriminatoires et critères de sélection objectifs.",
+        "Accès à la formation professionnelle pour tous les collaborateurs, sans distinction de genre."
+      ]
+    },
+    {
+      "title": "3. Conditions de travail et Qualité de Vie au Travail (QVT)",
+      "texts": [
+        "Offrir un environnement de travail sain, sûr et respectueux pour tous.",
+        "Prévenir le harcèlement sexuel et moral.",
+        "Promouvoir l'équilibre vie professionnelle / vie personnelle et accompagner la parentalité."
+      ]
+    },
+    {
+      "title": "4. Équilibre des temps de vie",
+      "texts": [
+        "Reconnaître l'importance de l'équilibre entre vie professionnelle et vie personnelle.",
+        "Mettre en place des dispositifs de flexibilité des horaires et de télétravail lorsque cela est possible.",
+        "Accompagner les salariés parents dans l'organisation de leur temps."
+      ]
+    },
+    {
+      "title": "5. Prévention des discriminations et du harcèlement",
+      "texts": [
+        "Tolérance zéro face à toute forme de discrimination (genre, origine, orientation sexuelle, handicap, etc.).",
+        "Mise en place de procédures claires pour signaler et traiter les situations de discrimination ou harcèlement.",
+        "Assurer la confidentialité et la protection des victimes."
+      ]
+    },
+    {
+      "title": "6. Communication et sensibilisation",
+      "texts": [
+        "Communiquer régulièrement sur les actions menées en faveur de l'égalité professionnelle.",
+        "Sensibiliser et former les collaborateurs à ces enjeux.",
+        "Promouvoir une culture d'entreprise inclusive et respectueuse."
+      ]
+    },
+    {
+      "title": "7. Mise en œuvre et suivi de la politique d'égalité",
+      "texts": [
+        "Désigner un référent égalité chargé de veiller à l'application de la politique et de répondre aux collaborateurs.",
+        "Mettre en place des indicateurs internes pour suivre les progrès (répartition femmes-hommes, évolution des salaires, participation aux formations, etc.).",
+        "Réaliser des bilans annuels partagés en interne pour garantir transparence et amélioration continue.",
+        "Adapter les pratiques aux évolutions législatives, aux bonnes pratiques et aux retours des collaborateurs."
+      ]
+    },
+    {
+      "title": "Conclusion",
+      "texts": [
+        "Le Cahier de l'Égalité d'AtypikHouse est un document évolutif qui reflète un engagement profond en faveur d'une société plus juste et équitable.",
+        "La promotion de l'égalité professionnelle est un facteur clé de succès pour l'entreprise, favorisant innovation, performance et bien-être collectif.",
+        "Tous les collaborateurs et partenaires sont invités à s'approprier ces valeurs et à contribuer activement à un environnement où chacun peut s'épanouir pleinement."
+      ]
+    }
+  ]
+}
+
       "title": "4. Protection des données personnelle",
       "texts": [
         "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Pour exercer ce droit, veuillez nous contacter par email."
