@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+Disallow: /dashboard/
+Sitemap: https://www.dsp4-cdp-s24-g1.fr/sitemap.xml

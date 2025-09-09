@@ -1,0 +1,116 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-weight: normal;
+}
+
+body {
+    min-height: 100vh;
+}
+
+b {
+    font-weight: bold;
+}
+
+p, .p-alt-1, .p-alt-2, td, th {
+    font-family: Calibri, sans-serif;
+    color: #3E3E3E;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+p { color: #3E3E3E; }
+.p-alt-1 { color: #ffffff; }
+.p-alt-2 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+h2, .h2-alt-1 {
+    font-family: "Larken-Medium";
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+h3 {
+    font-family: Calibri, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 100%;
+}
+
+h2 { color: #296242; }
+.h2-alt-1 { color: #ffffff; }
+
+@font-face {
+    font-family: "Larken-Medium";
+    src:
+    url("@/../../public/fonts/Larken/LarkenDEMO-Medium.otf") format("opentype");
+}
+
+#app {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.layout-container {
+    margin: 40px 80px;
+}
+
+.layout-container-bis {
+    margin: 0 80px;
+}
+
+.vueperslides__track {
+    padding: 20px;
+}
+
+@media screen and (min-width: 1440px) {
+    .layout-container {
+        max-width: 1280px;
+        min-width: 1280px;
+        margin: 40px auto;
+    }
+
+    .layout-container-bis {
+        max-width: 1280px;
+        min-width: 1280px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .layout-container {
+        margin: 20px 40px;
+    }
+
+    .layout-container-bis {
+        margin: 0 40px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .layout-container {
+        margin: 20px 10px;
+    }
+
+    .layout-container-bis {
+        margin: 0 10px;
+    }
+
+    h2, .h2-alt-1 {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    h2, .h2-alt-1 {
+        font-size: 28px;
+    }
+}
