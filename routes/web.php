@@ -35,12 +35,12 @@ Route::get('logement-unique', function (Request $request) { return Inertia::rend
 Route::get('experience-unique', function (Request $request) { return Inertia::render('ExperienceUnique', ['experienceData' => $request->input('data')]); })->name('experience-unique');
 
 /* Database data fetching */
-Route::get('accommodations', AccommodationController::class);
+Route::get('accommodations', [AccommodationController::class, '__invoke']);
 Route::get('accommodations/getLastNine', [AccommodationController::class, 'getLastNineAccommodations']);
 Route::get('accommodations/getLastThree', [AccommodationController::class, 'getLastThreeAccommodations']);
 Route::get('accommodations/getByTypes', [AccommodationController::class, 'getAccommodationsByTypes']);
 Route::get('user-accommodations', [AccommodationController::class, 'getUserAccommodations']);
-Route::get('accommodation-images/{id}', AccommodationImageController::class);
+Route::get('accommodation-images/{id}', [AccommodationImageController::class, '__invoke']);
 Route::get('accommodation-reservations/{id}', [AccommodationReservationController::class, 'getReservationsForAccommodation']);
 
 Route::get('article/{id}', [ArticleController::class, 'getArticleById']);

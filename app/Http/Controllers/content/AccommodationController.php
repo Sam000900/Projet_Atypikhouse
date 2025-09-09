@@ -57,7 +57,7 @@ class AccommodationController extends Controller
     // READ
     public function __invoke()
     {
-        return Accommodation::with('user')->all();
+        return Accommodation::with('user')->get();
     }
 
     public function getUserAccommodations(Request $request)
