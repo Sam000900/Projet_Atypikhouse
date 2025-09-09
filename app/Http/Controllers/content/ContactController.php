@@ -20,7 +20,9 @@ class ContactController extends Controller
     // READ
     public function getLastFiftyContacts()
     {
-        return new ContactResource(Contact::orderBy('id', 'desc'))->paginate(50);
+        return ContactResource::collection(
+            Contact::orderBy('id', 'desc')->paginate(50)
+        );
     }
 
     // UPDATE

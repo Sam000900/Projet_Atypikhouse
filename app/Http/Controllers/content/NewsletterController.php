@@ -20,7 +20,9 @@ class NewsletterController extends Controller
     // READ
     public function getLastFiftyNewsletters()
     {
-        return new NewsletterResource(Newsletter::orderBy('id', 'desc'))->paginate(50);
+        return NewsletterResource::collection(
+            Newsletter::orderBy('id', 'desc')->paginate(50)
+        );
     }
 
     // DELETE

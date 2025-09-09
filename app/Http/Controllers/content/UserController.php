@@ -20,7 +20,9 @@ class UserController extends Controller
 
     public function getLastHundredUsers()
     {
-        return new UserFullResource(User::with(['accommodations', 'experiences', 'articles'])->orderBy('id', 'desc'))->paginate(100);
+        return UserFullResource::collection(
+            User::with(['accommodations', 'experiences', 'articles'])->orderBy('id', 'desc')->paginate(100)
+        );
     }
 
     // UPDATE

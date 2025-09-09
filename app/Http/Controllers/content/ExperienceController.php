@@ -64,7 +64,9 @@ class ExperienceController extends Controller
 
     public function getLastHundredExperiences()
     {
-        return new ExperienceFullResource(Experience::with('user')->orderBy('id', 'desc'))->paginate(100);
+        return ExperienceFullResource::collection(
+            Experience::with('user')->orderBy('id', 'desc')->paginate(100)
+        );
     }
 
     // UPDATE

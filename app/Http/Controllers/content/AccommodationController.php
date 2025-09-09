@@ -22,21 +22,21 @@ class AccommodationController extends Controller
         $validated = $request->validated();
         $validated['user_id'] = $request->user()->id;
         $mainImagePath = null;
+        $images = [];
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $index => $image) {
-                $path = $image->store('users-images', 'public');
-
+                $path = $image->store('accommodations-images', 'public');
                 if ($index === 0) {
                     $mainImagePath = $path;
                 }
-
                 $images[] = [
                     'path' => $path,
                     'is_main' => $index === 0,
                 ];
             }
         }
+
 
         $validated['main_image'] = $mainImagePath;
         $accommodation = Accommodation::create($validated);
@@ -97,7 +97,9 @@ class AccommodationController extends Controller
 
     public function getLastHundredAccommodations()
     {
-        return new AccommodationFullResource(Accommodation::with('user')->orderBy('id', 'desc'))->paginate(100);
+        return AccommodationFullResource::collection(
+            Accommodation::with('user')->orderBy('id', 'desc')->paginate(100)
+        );
     }
 
     // UPDATE
@@ -147,9 +149,9 @@ class AccommodationController extends Controller
             if (!str_starts_with($image->image_path, 'images/seeder-images')) {
                 if (Storage::disk('public')->exists($image->image_path)) {
                     Storage::disk('public')->delete($image->image_path);
-                    $image->delete();
                 }
             }
+            $image->delete();
         }
 
         $accommodation->delete();

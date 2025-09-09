@@ -9,6 +9,6 @@ class ExperienceReservationController extends Controller
 {
     public function getReservationsForExperience($experienceId)
     {
-        return ExperienceReservation::all()->where('experience_id', $experienceId);
+        return ExperienceReservation::where('experience_id', $experienceId)->get();
     }
 }

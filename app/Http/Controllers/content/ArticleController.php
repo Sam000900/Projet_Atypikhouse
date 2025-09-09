@@ -26,7 +26,7 @@ class ArticleController extends Controller
     // READ
     public function getArticleById($articleId)
     {
-        return Article::with('user')->where('id', $articleId)->get();
+        return Article::with('user')->findOrFail($articleId);
     }
 
     public function getAllArticles()
@@ -41,7 +41,9 @@ class ArticleController extends Controller
 
     public function getLastHundredArticles()
     {
-        return new ArticleFullResource(Article::with('user')->orderBy('id', 'desc'))->paginate(100);
+        return ArticleFullResource::collection(
+            Article::with('user')->orderBy('id', 'desc')->paginate(100)
+        );
     }
 
     // UPDATE
