@@ -14,7 +14,7 @@ export const getLoggedUser = async () => {
 export const getLastHundredUsers = async (page = 1) => {
   try {
     const response = await axios.get(`/users/getLastHundred?page=${page}`);
-    return response.data;
+    return response;
   } catch (error) {
     return console.error(error);
   }

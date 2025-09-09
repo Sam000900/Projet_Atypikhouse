@@ -39,11 +39,12 @@
 
   async function loadUsers() {
     const response = await getLastHundredUsers(1);
-    users.value = response.data;
+    users.value = response.data.data;
   };
 
   async function loadAccommodations() {
     const response = await getLastHundredAccommodations(1);
+    console.log(response.data)
     accommodations.value = response.data;
   };
 

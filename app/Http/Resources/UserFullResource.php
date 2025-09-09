@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\AccommodationFullResource;
 use App\Http\Resources\ExperienceFullResource;
-use App\Http\Resources\ArticlesFullResource;
+use App\Http\Resources\ArticleFullResource;
 
 class UserFullResource extends JsonResource
 {
@@ -25,7 +25,7 @@ class UserFullResource extends JsonResource
             'updated_at' => $this->updated_at,
             'accommodations' => AccommodationFullResource::collection($this->whenLoaded('accommodations')),
             'experiences' => ExperienceFullResource::collection($this->whenLoaded('experiences')),
-            'articles' => ArticlesFullResource::collection($this->whenLoaded('articles'))
+            'articles' => ArticleFullResource::collection($this->whenLoaded('articles'))
         ];
     }
 }
