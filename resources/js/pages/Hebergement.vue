@@ -14,6 +14,7 @@
   const accommodations = ref([]);
   const pageInfos = ref({ current_page: 1, last_page: 1 });
   const section = useTemplateRef('cardsgallery');
+  const isComponentsSwitched = ref(false);
 
   async function loadAccommodations(page) {
     const getResult = await getLastNineAccommodations(page);
@@ -31,6 +32,15 @@
     }
   }
 
+  function switchComponents(isSwitched) {
+    console.log(isSwitched)
+    isComponentsSwitched.value = isSwitched;
+  }
+
+  function cancelSearch() {
+    isComponentsSwitched.value = false;
+  }
+
   onMounted(() => {
     loadAccommodations(pageInfos.value.current_page);
   });
@@ -38,12 +48,14 @@
 
 <template>
   <Header />
-  <Banner :image="imgLogement" title="Hébergement" />
-  <Map />
-  <div ref="cardsgallery">
-    <CardsGallery :accommodationsData="accommodations" :pageData="pageInfos" @emitGoToPage="(page) => goToPage(page)" />
+  <Banner :image="imgLogement" title="Hébergement" @switch-components="switchComponents" @cancel-search="cancelSearch" />
+  <div v-if="!isComponentsSwitched">
+    <Map />
+    <div ref="cardsgallery">
+      <CardsGallery :accommodationsData="accommodations" :pageData="pageInfos" @emitGoToPage="(page) => goToPage(page)" />
+    </div>
+    <Footer />
   </div>
-  <Footer />
 </template>
 
 <style scoped>

@@ -44,7 +44,6 @@
 
   async function loadAccommodations() {
     const response = await getLastHundredAccommodations(1);
-    console.log(response.data)
     accommodations.value = response.data;
   };
 

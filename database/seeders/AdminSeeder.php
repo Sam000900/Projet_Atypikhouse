@@ -23,5 +23,16 @@ class AdminSeeder extends Seeder
             'image_path' => "images/seeder-images/user-image-1.jpg",
             'password' => Hash::make('Sam!+Gar84'),
         ]);
+
+        User::factory()->create([
+            'role' => 'admin',
+            'firstname' => 'Marina',
+            'lastname' => 'Soares',
+            'email' => 'mar.soa@test.com',
+            'phone' => '9876543210',
+            'birthdate' => '2000-01-01',
+            'image_path' => "images/seeder-images/user-image-1.jpg",
+            'password' => Hash::make('Mar!+Soa84'),
+        ]);
     }
 }

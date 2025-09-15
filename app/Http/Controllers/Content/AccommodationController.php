@@ -102,6 +102,42 @@ class AccommodationController extends Controller
         );
     }
 
+    public function search(Request $request)
+    {
+        $query = Accommodation::query();
+
+        if ($request->filled('location')) {
+            $location = strtolower($request->location);
+
+            $query->where(function ($q) use ($location) {
+                $q->whereRaw('LOWER(municipality) LIKE ?', ["%{$location}%"])
+                ->orWhereRaw('LOWER(department) LIKE ?', ["%{$location}%"]);
+            });
+        }
+
+        if ($request->filled('capacity')) {
+            $query->where('capacity', '>=', $request->capacity);
+        }
+
+        if ($request->filled('arrival_date') && $request->filled('departure_date')) {
+            $arrival = $request->arrival_date;
+            $departure = $request->departure_date;
+
+            $query->whereDoesntHave('reservations', function ($q) use ($arrival, $departure) {
+                $q->where(function ($sub) use ($arrival, $departure) {
+                    $sub->whereBetween('arrival_date', [$arrival, $departure])
+                        ->orWhereBetween('departure_date', [$arrival, $departure])
+                        ->orWhere(function ($nested) use ($arrival, $departure) {
+                            $nested->where('arrival_date', '<=', $arrival)
+                                ->where('departure_date', '>=', $departure);
+                        });
+                });
+            });
+        }
+
+        return $query->with('user')->orderBy('id', 'desc')->paginate(9);
+    }
+
     // UPDATE
     public function update(UpdateAccommodationRequest $request, Accommodation $accommodation): RedirectResponse
     {

@@ -59,3 +59,13 @@ export const getLastHundredAccommodations = async (page = 1) => {
     return console.error(error);
   }
 }
+
+// Search accommodation with parameters
+export async function searchAccommodations(params, page = 1) {
+  try {
+    const response = await axios.get("/accommodations/search", { params: { ...params, page } });
+    return response.data;
+  } catch (error) {
+    return console.error(error);
+  }
+}

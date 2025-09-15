@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, onMounted } from 'vue';
+  import { ref, onMounted  } from 'vue';
 
   import { getLastThreeAccommodations } from '@/api/accommodationApi.js';
   import { getUniqueExperienceByTypes } from '@/api/experienceApi.js';
@@ -18,6 +18,7 @@
   const accommodations = ref([]);
   const experiences = ref([]);
   const articles = ref([]);
+  const isComponentsSwitched = ref(false);
 
   async function loadDatabaseContent() {
     try {
@@ -34,6 +35,15 @@
     }
   };
 
+  function switchComponents(isSwitched) {
+    console.log(isSwitched)
+    isComponentsSwitched.value = isSwitched;
+  }
+
+  function cancelSearch() {
+    isComponentsSwitched.value = false;
+  }
+
   onMounted(() => {
     loadDatabaseContent();
   });
@@ -41,13 +51,12 @@
 
 <template>
   <Header />
-  <Banner :image="bannerImage" title="Accueil" />
-  <TrioCards :accommodationsData="accommodations" />
-  <ExperiencesCards :experiencesData="experiences" />
-  <ImageTextBloc />
-  <Gallery :articleData="articles" />
-  <Footer />
+  <Banner :image="bannerImage" title="Accueil" @switch-components="switchComponents" @cancel-search="cancelSearch" />
+  <div v-if="!isComponentsSwitched">
+    <TrioCards :accommodationsData="accommodations" />
+    <ExperiencesCards :experiencesData="experiences" />
+    <ImageTextBloc />
+    <Gallery :articleData="articles" />
+    <Footer />
+  </div>
 </template>
-
-<style scoped>
-</style>

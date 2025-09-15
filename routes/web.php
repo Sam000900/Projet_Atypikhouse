@@ -40,6 +40,7 @@ Route::get('accommodations/getLastNine', [AccommodationController::class, 'getLa
 Route::get('accommodations/getLastThree', [AccommodationController::class, 'getLastThreeAccommodations']);
 Route::get('accommodations/getByTypes', [AccommodationController::class, 'getAccommodationsByTypes']);
 Route::get('user-accommodations', [AccommodationController::class, 'getUserAccommodations']);
+Route::get('accommodations/search', [AccommodationController::class, 'search']);
 Route::get('accommodation-images/{id}', [AccommodationImageController::class, '__invoke']);
 Route::get('accommodation-reservations/{id}', [AccommodationReservationController::class, 'getReservationsForAccommodation']);
 

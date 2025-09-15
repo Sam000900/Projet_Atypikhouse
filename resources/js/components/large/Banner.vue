@@ -1,31 +1,86 @@
 <script setup>
+  import { ref, useTemplateRef } from "vue";
+  import { searchAccommodations } from "@/api/accommodationApi.js";
+  import CardsGallery from '@/components/large/CardsGallery.vue';
+
   const props = defineProps(['image', 'title']);
+  const emit = defineEmits(["switch-components", "cancel-search"]);
+
+  const location = ref("");
+  const capacity = ref("");
+  const arrivalDate = ref("");
+  const departureDate = ref("");
+
+  const accommodations = ref([]);
+  const pageInfos = ref({ current_page: 1, last_page: 1 });
+  const section = useTemplateRef('search');
+  const searchParams = ref({});
+  const searchActive = ref(false);
+
+  async function handleSearch() {
+    searchParams.value = {
+      location: location.value || null,
+      capacity: capacity.value || null,
+      arrival_date: arrivalDate.value || null,
+      departure_date: departureDate.value || null,
+      page: 1,
+    };
+
+    await performSearch(searchParams.value);
+  }
+
+  async function performSearch(params) {
+    params.page = params.page || 1;
+    const result = await searchAccommodations(params, params.page);
+    accommodations.value = result.data;
+    pageInfos.value.current_page = result.current_page ?? 1;
+    pageInfos.value.last_page = result.last_page ?? 1;
+    searchActive.value = true;
+    section.value?.scrollIntoView({behavior: "instant", block: "start"});
+    window.scrollBy({ top: -200, behavior: "instant" });
+
+    emit("switch-components", true);
+  }
+
+  async function goToPage(page) {
+    if (page < 1 || page > pageInfos.value.last_page) return;
+    searchParams.value.page = page;
+    await performSearch(searchParams.value);
+  }
+
+  function cancelSearch() {
+    searchActive.value = false;
+    emit('cancel-search');
+  }
 </script>
 
 <template>
   <div class="banner layout-container">
     <div class="banner-image-box">
-      <img :src="props.image" alt="maison en haut d'un arbre" class="banner-image" />
+      <img :src="props.image" alt="image de bannière" class="banner-image" />
       <div v-if="props.title" class="banner-filter">
         <h1>{{ props.title }}</h1>
       </div>
     </div>
 
-    <div class="banner-search-bar-box">
+    <div ref="search" class="banner-search-bar-box">
       <div class="banner-search-bar">
         <div class="banner-search-bar-part">
           <VsxIcon iconName="Location" color="#747474" size="32" type="linear" />
           <div class="banner-search-input-box">
             <p class="banner-search-text">Où allez-vous ?</p>
-            <input type="text" placeholder="Annecy" class="banner-search-input" />
+            <input v-model="location" type="text" placeholder="Annecy" class="banner-search-input" />
           </div>
         </div>
         <div class="banner-separator"></div>
         <div class="banner-search-bar-part">
           <VsxIcon iconName="Calendar" color="#747474" size="32" type="linear" />
           <div class="banner-search-input-box">
-            <p class="banner-search-text">Dates ?</p>
-            <input type="text" placeholder="Mardi 14 février" class="banner-search-input" />
+            <p class="banner-search-text">Dates d'arrivée et de départ</p>
+            <div>
+              <input v-model="arrivalDate" type="date" class="banner-search-input" />
+              <input v-model="departureDate" type="date" class="banner-search-input" />
+            </div>
           </div>
         </div>
         <div class="banner-separator"></div>
@@ -33,12 +88,23 @@
           <VsxIcon iconName="People" color="#747474" size="32" type="linear" />
           <div class="banner-search-input-box">
             <p class="banner-search-text">Combien de personnes ?</p>
-            <input type="text" placeholder="2 personnes" class="banner-search-input" />
+            <input v-model="capacity" type="number" min="1" placeholder="2 personnes" class="banner-search-input" />
           </div>
         </div>
-        <input type="button" value="Recherche" class="banner-search-button">
+        <div class="banner-buttons-box">
+          <button v-if="searchActive" class="banner-cancel-button" @click="cancelSearch">╳</button>
+          <input type="button" value="Recherche" class="banner-search-button" @click="handleSearch" />
+        </div>
       </div>
     </div>
+
+  </div>
+  <div v-if="searchActive" class="search-results mt-4">
+    <CardsGallery
+      :accommodationsData="accommodations"
+      :pageData="pageInfos"
+      @emitGoToPage="(page) => goToPage(page)"
+    />
   </div>
 </template>
 
@@ -138,6 +204,13 @@
     color: #B6B6B6;
   }
 
+  .banner-buttons-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
   .banner-search-button {
     height: 100%;
     min-height: 45px;
@@ -162,6 +235,26 @@
     width: 1px;
     height: 40px;
     background-color: #B6B6B6;
+  }
+
+  .banner-cancel-button {
+    height: 100%;
+    aspect-ratio: 1/1;
+    min-height: 45px;
+    border: 0;
+    border-radius: 8px;
+    margin: auto;
+    background-color: crimson;
+    color: #ffffff;
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+
+  .banner-cancel-button:hover {
+    background-color: rgb(218, 53, 83);
   }
 
   @media screen and (max-width: 1260px) {
@@ -225,9 +318,12 @@
       grid-area: d;
     }
 
-
     .banner-separator {
       display: none;
+    }
+
+    .banner-buttons-box {
+      grid-column: 1 / span 2;
     }
   }
 

@@ -9,10 +9,20 @@
   import imgExperiences from '@/../../public/images/img-homme-au-milieu-de-ballons.jpg';
 
   const experiences = ref([]);
+  const isComponentsSwitched = ref(false);
 
   async function loadDatabaseContent() {
     experiences.value = await getExperiencesByTypes();
   };
+
+  function switchComponents(isSwitched) {
+    console.log(isSwitched)
+    isComponentsSwitched.value = isSwitched;
+  }
+
+  function cancelSearch() {
+    isComponentsSwitched.value = false;
+  }
 
   onMounted(() => {
     loadDatabaseContent();
@@ -21,10 +31,12 @@
 
 <template>
   <Header />
-  <Banner :image="imgExperiences" title="Expériences" />
-  <CarouselCardsExperiences title="Séjours bien-êtres" :experiencesData="experiences.wellness" />
-  <CarouselCardsExperiences title="Aventures" :experiencesData="experiences.adventure" />
-  <CarouselCardsExperiences title="Gastronomie locale" :experiencesData="experiences.gastronomy" />
+  <Banner :image="imgExperiences" title="Expériences" @switch-components="switchComponents" @cancel-search="cancelSearch" />
+  <div v-if="!isComponentsSwitched">
+    <CarouselCardsExperiences title="Séjours bien-êtres" :experiencesData="experiences.wellness" />
+    <CarouselCardsExperiences title="Aventures" :experiencesData="experiences.adventure" />
+    <CarouselCardsExperiences title="Gastronomie locale" :experiencesData="experiences.gastronomy" />
+  </div>
   <Footer />
 </template>
 
